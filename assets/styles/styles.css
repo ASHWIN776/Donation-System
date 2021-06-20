@@ -234,7 +234,8 @@ button:hover{
 
     #home-content{
         text-align: center;
-        margin: 0 auto;
+        padding: 0 2rem;
+        flex-basis: 100%;
     }
 
     #home-content > div{
