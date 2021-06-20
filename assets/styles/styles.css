@@ -255,6 +255,7 @@ h2{
         background-color: white;
     }
 
+    
     nav{
         flex-grow: 0;
         flex-direction: column;
@@ -278,12 +279,22 @@ h2{
         transform: translateY(0);
     }
 
+    h1{
+        font-size: 1.5rem;
+    }
+
+    #donate-btn{
+        font-size: 14px;
+    }
+
+
+
     main{
         transition: margin 500ms;
     }
 
     .shift-main{
-        margin-top: 22.85rem;
+        margin-top: 14.85rem;
     }
 
     .rotate .line1{
@@ -304,7 +315,7 @@ h2{
 
 
     main{
-        margin-top: 16.85rem;
+        margin-top: 8.85rem;
     }
 
     #home{
