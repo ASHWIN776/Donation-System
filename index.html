@@ -1,17 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donation System</title>
     <!-- External CSS -->
-    <link rel="stylesheet" href="./assets/styles/styles.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-sub">
+          <span id="logo" class="nav-item"> Logo </span>
+          <a href="#" class="nav-link nav-item"> News </a>
+        </div>
+        <ul>
+          <li class="nav-link nav-item">
+            <a href="#" class="nav-link"> Home </a>
+          </li>
+          <li class="nav-link nav-item">
+            <a href="#" class="nav-link"> About </a>
+          </li>
+          <li class="nav-link nav-item">
+            <a href="#" class="nav-link"> Contact </a>
+          </li>
+        </ul>
+        <div class="nav-sub">
+          <button id="donate-nav">Donate</button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="home">
+        <div id="home-content">
+            <h2>
+                Joing the fight against
+                <span class="blue-hl"> COVID-19 </span>
+            </h2>
+            <p class="home-content">
+                The World has never faced a crisis like COVID-19. The pandemic is
+                affecting communities everywhere. Let's fight it by helping each
+                other.
+            </p>
+            <button id="donate-btn">
+              Donate
+            </button>
+        </div>
+        <div id="home-pic">
+          <img src="./assets/img/home.png" alt="Doctor holding the globe" />
+        </div>
+      </section>
+      <section id="about">
+        <div id="expenditure">
+            <h2>
+                Expenditure of your <span class="blue-hl">Donations</span>
+            </h2>
+          <div>
+            <div class="expend-container">
+                <h5>For Medical Workers</h5>
+                <p class="expend-content">
+                    Donations will be used to buy personal safety equipments for the
+                    medical personnels
+                </p>
+            </div>
+            <div class="expend-container">
+                <h5>For Citizens</h5>
+                <p class="expend-content">
+                    Donations will be used to buy personal safety equipments for the
+                    medical personnels
+                </p>
+            </div>
+            <div class="expend-container">
+                <h5>For Affected Businesses</h5>
+                <p class="expend-content">
+                    Donations will be used to buy personal safety equipments for the
+                    medical personnels
+                </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- External JS -->
     <script src="./assets/scripts/main.jss"></script>
-</body>
+  </body>
 </html>
