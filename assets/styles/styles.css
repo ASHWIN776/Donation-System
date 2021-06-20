@@ -10,6 +10,9 @@ body, html{
 }
 
 header{
+    position: absolute;
+    width: 100%;
+    top: 0%;
     display: flex;
     align-items: center;
     min-height: 6vh;
@@ -98,9 +101,7 @@ nav ul{
 .nav-scroll{
     background-color: white;
     z-index: 1;
-    position: sticky;
-    top: 0%;
-    width: 100%;
+    position: fixed;
 }
 
 .nav-scroll #donate-nav{
@@ -166,6 +167,41 @@ button:hover{
 .blue-hl{
     color: #3B9FEB;
 }
+
+/* Home Section Styles end here */
+#about{
+    height: 100vh;
+}
+
+
+#expenditure{
+    padding-top: 1.5rem;
+    border: 2px solid;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#expenditure > div{
+    display: flex;
+    justify-content: center;
+}
+
+.expend-container{
+    padding: 1rem;
+    margin:  0 2rem;
+    flex-basis: 300px;
+    border: 1px solid #D8D8D8;
+    border-radius: 10px;
+}
+
+.expend-content{
+    color: #6f6e6e;
+    line-height: 30px;
+}
+
 
 
 
@@ -252,5 +288,16 @@ button:hover{
         left: 50%;
         top: 0%;
         transform: translate(-50%,0);
+    }
+
+    /* Home Section Styles end here */
+
+    #expenditure > div{
+        flex-direction: column;
+        padding: 0 2rem;
+    }
+
+    .expend-container{
+        margin: 1rem 0;
     }
 }
