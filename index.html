@@ -30,7 +30,7 @@
                 </li>
             </ul>
             <div class="nav-item">
-                <button id="donate-nav">Donate</button>
+                <button id="donate-nav" class="donate">Donate</button>
             </div>
         </nav>
         <div class="burger">
@@ -52,7 +52,7 @@
                     affecting communities everywhere. Let's fight it by helping each
                     other.
                 </p>
-                <button id="donate-btn">
+                <button id="donate-btn" class="donate">
                   Donate
                 </button>
             </div>
@@ -95,5 +95,31 @@
 
     <!-- External JS -->
     <script src="./assets/scripts/main.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        var options = {
+            "key": "rzp_test_d1YgWNuy1yyx2Y", // Enter the Key ID generated from the Dashboard
+            "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            "currency": "INR",
+            "name": "Acme Corp",
+            "description": "Test Transaction",
+            "image": "https://example.com/your_logo",
+            // "order_id": "order_Ef80WJDPBmAeNt", //Pass the `id` obtained in the previous step
+            // "account_id": "acc_Ef7ArAsdU5t0XL",
+            "handler": function (response){
+                console.log(response);
+            }
+        };
+        var rzp1 = new Razorpay(options);
+        const donateBtns = document.querySelectorAll(".donate");
+
+        donateBtns.forEach(btn => btn.addEventListener("click", startCheckout));
+        
+        function startCheckout(e)
+        {
+            rzp1.open();
+            e.preventDefault();
+        }
+    </script>
   </body>
 </html>
