@@ -16,7 +16,7 @@ header{
     display: flex;
     align-items: center;
     min-height: 6vh;
-
+    transition: background-color 400ms;
 }
 
 header > *{
@@ -90,6 +90,16 @@ nav ul{
 .burger:hover .line{
     background-color: rgb(103, 103, 103);
     border-color:rgb(103,103,103);
+}
+
+.nav-scroll{
+    background-color: white;
+    z-index: 1;
+}
+
+.nav-scroll #donate-nav{
+    background-color: #3B9FEB;
+    color: white;
 }
 
 /* Header Styles ends here */

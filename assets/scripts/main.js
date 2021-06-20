@@ -4,6 +4,7 @@ const line2 = document.querySelector(".line2")
 const line3 = document.querySelector(".line3")
 const nav = document.querySelector("nav");
 const main = document.querySelector("main");
+const header = document.querySelector("header");
 
 burger.addEventListener("click", showNav);
 
@@ -23,4 +24,12 @@ function showNav(evt)
         nav.classList.remove("nav-top");
 
     }
+}
+
+
+window.addEventListener("scroll", styleNav);
+
+function styleNav()
+{
+    header.classList.toggle("nav-scroll", this.scrollY > 0);
 }
