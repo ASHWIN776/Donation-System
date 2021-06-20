@@ -248,7 +248,7 @@ h2{
 }
 
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 800px){
     
     header{
         justify-content: space-between;
@@ -283,7 +283,7 @@ h2{
     }
 
     .shift-main{
-        margin-top: 25.85rem;
+        margin-top: 22.85rem;
     }
 
     .rotate .line1{
@@ -304,7 +304,7 @@ h2{
 
 
     main{
-        margin-top: 20.85rem;
+        margin-top: 16.85rem;
     }
 
     #home{
@@ -339,14 +339,45 @@ h2{
         padding: 0 2rem;
     }
 
-    .expend-container{
-        margin: 1rem 0;
-    }
-
     /* Expenditure section over */
 
     #org-stats{
         display: flex;
         flex-direction: column-reverse;       
+    }
+}
+
+@media only screen and (max-width: 1300px){
+    #home-content,
+    #home-pic{
+        flex-basis: 50%;
+    }
+
+    #home-pic{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #home-pic > img{
+        position: static;
+        transform: translateY(0);
+    }
+
+    #home-content > div{
+        width: auto;
+    }
+}
+
+
+
+@media only screen and (max-width: 1000px){
+    #expenditure > div{
+        flex-wrap: wrap;
+    }
+
+    .expend-container{
+        flex-basis: calc(50% - 4*2rem);
+        margin: 1rem;
     }
 }
