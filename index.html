@@ -5,37 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donation System</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
     <!-- External CSS -->
     <link rel="stylesheet" href="./assets/styles/styles.css" />
   </head>
   <body>
     <header>
-      <nav>
-        <div class="nav-sub">
-          <span id="logo" class="nav-item"> Logo </span>
-          <a href="#" class="nav-link nav-item"> News </a>
+        <div class="nav-logo">Logo</div>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a href="#" class="nav-link nav-item"> News </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"> Home </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"> About </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"> Contact </a>
+                </li>
+                <li class="nav-item">
+                    <button id="donate-nav">Donate</button>
+                </li>
+            </ul>
+        </nav>
+        <div class="burger">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
         </div>
-        <ul>
-          <li class="nav-link nav-item">
-            <a href="#" class="nav-link"> Home </a>
-          </li>
-          <li class="nav-link nav-item">
-            <a href="#" class="nav-link"> About </a>
-          </li>
-          <li class="nav-link nav-item">
-            <a href="#" class="nav-link"> Contact </a>
-          </li>
-        </ul>
-        <div class="nav-sub">
-          <button id="donate-nav">Donate</button>
-        </div>
-      </nav>
     </header>
     <main>
       <section id="home">
         <div id="home-content">
             <h2>
-                Joing the fight against
+                Join the fight against
                 <span class="blue-hl"> COVID-19 </span>
             </h2>
             <p class="home-content">
@@ -84,6 +92,6 @@
     </main>
 
     <!-- External JS -->
-    <script src="./assets/scripts/main.jss"></script>
+    <script src="./assets/scripts/main.js"></script>
   </body>
 </html>

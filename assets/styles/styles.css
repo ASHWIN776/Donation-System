@@ -2,9 +2,131 @@ body, html{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 *, *::after, *::before{
     box-sizing: inherit;
 }
 
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 6vh;
+    background-color: white;
+    z-index: 2;
+}
+
+header > *{
+    margin: 0 1rem;
+}
+
+header ul{
+    padding: 0;
+}
+
+.nav-logo{
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: #3B9FEB;
+}
+
+.nav-logo, .nav-link{
+    text-transform: uppercase;
+}
+
+.nav-item{
+    list-style-type: none;
+    margin: 0.5rem 0;
+}
+
+.nav-item:first-child{
+    margin-top: 0;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link:hover{
+    font-weight: bold;
+}
+
+#donate-nav{
+    background-color: transparent;
+    padding: 0.3rem 0.7rem;
+    border: 3px solid #3B9FEB;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.line{
+    background-color: black;
+    border-radius: 10px; 
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    transition: transform 400ms;
+}
+
+
+.burger{
+    display: none;
+}
+
+.burger:hover{
+    cursor: pointer;
+}
+
+.burger:hover .line{
+    background-color: rgb(103, 103, 103);
+    border-color:rgb(103,103,103);
+}
+
+
+
+@media only screen and (max-width: 768px){
+    
+    nav{
+        padding-left: 1rem;
+        position: absolute;
+        width: 100%;
+        margin: 0;
+        left: 0;
+        top: 6vh;
+        z-index: -1;
+        background-color: white;
+        transform: translateY(-100%);
+        transition: transform 500ms;
+    }
+
+    .burger{
+        display: block;
+    }
+
+    .nav-active{
+        transform: translateY(0);
+    }
+
+    main{
+        transition: margin 500ms;
+    }
+
+    .shift-main{
+        margin-top: 12rem;
+    }
+
+    .rotate .line1{
+        transform: rotate(-40deg) translate(-5px,6px);
+    }
+
+    .rotate .line3{
+        transform: rotate(40deg) translate(-5px,-6px);
+    }
+
+    .rotate .line2{
+        visibility: hidden;
+    }
+}
