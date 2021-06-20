@@ -10,13 +10,11 @@ body, html{
 }
 
 header{
-    width: 100%;
-    position: fixed;
-    top: 0%;
     display: flex;
     align-items: center;
     min-height: 6vh;
     transition: background-color 400ms;
+    z-index: 2;
 }
 
 header > *{
@@ -61,6 +59,11 @@ nav ul{
     color: black;
 }
 
+.nav-link:active{
+    border-bottom: 2px solid;
+}
+
+
 #donate-nav{
     background-color: transparent;
     padding: 0.3rem 0.7rem;
@@ -95,6 +98,9 @@ nav ul{
 .nav-scroll{
     background-color: white;
     z-index: 1;
+    position: sticky;
+    top: 0%;
+    width: 100%;
 }
 
 .nav-scroll #donate-nav{
@@ -171,6 +177,8 @@ button:hover{
     }
 
     nav{
+        flex-grow: 0;
+        flex-direction: column;
         padding-left: 1rem;
         position: absolute;
         width: 100%;
@@ -196,7 +204,7 @@ button:hover{
     }
 
     .shift-main{
-        margin-top: 12rem;
+        margin-top: 22rem;
     }
 
     .rotate .line1{
@@ -213,5 +221,35 @@ button:hover{
 
     .nav-top{
         z-index: 0;
+    }
+
+
+    main{
+        margin-top: 15.85rem;
+    }
+
+    #home{
+        flex-direction: column-reverse;
+    }
+
+    #home-content{
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    #home-content > div{
+        margin: 0;
+    }
+
+    #home-pic{
+        flex-basis: 100%;
+        background-color: white;
+    }
+
+    #home-pic img{
+        max-width: 100%;
+        left: 50%;
+        top: 0%;
+        transform: translate(-50%,0);
     }
 }
