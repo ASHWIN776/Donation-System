@@ -175,8 +175,7 @@ button:hover{
 
 
 #expenditure{
-    padding-top: 1.5rem;
-    border: 2px solid;
+    padding: 1.5rem 0;
 }
 
 h2{
@@ -202,7 +201,51 @@ h2{
     line-height: 30px;
 }
 
+/* expenditure styles end here */
 
+#org-stats{
+    background-color: #F3F3F3;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+#org-stats > div{
+    flex-basis: 50%;
+    text-align: center;
+}
+
+
+#num-stats{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#num-stats > div{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.num-container{
+    flex-basis: 50%;
+    padding: 1rem;
+}
+
+.num-container h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.num-content{
+    margin: 0.4rem 0;
+    text-transform: uppercase;
+}
 
 
 @media only screen and (max-width: 768px){
@@ -240,7 +283,7 @@ h2{
     }
 
     .shift-main{
-        margin-top: 22rem;
+        margin-top: 25.85rem;
     }
 
     .rotate .line1{
@@ -261,7 +304,7 @@ h2{
 
 
     main{
-        margin-top: 15.85rem;
+        margin-top: 20.85rem;
     }
 
     #home{
@@ -279,15 +322,14 @@ h2{
     }
 
     #home-pic{
-        flex-basis: 100%;
+        text-align: center;
         background-color: white;
     }
 
     #home-pic img{
         max-width: 100%;
-        left: 50%;
-        top: 0%;
-        transform: translate(-50%,0);
+        position: static;
+        transform: translateY(0%);
     }
 
     /* Home Section Styles end here */
@@ -299,5 +341,12 @@ h2{
 
     .expend-container{
         margin: 1rem 0;
+    }
+
+    /* Expenditure section over */
+
+    #org-stats{
+        display: flex;
+        flex-direction: column-reverse;       
     }
 }
