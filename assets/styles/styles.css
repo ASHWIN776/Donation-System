@@ -10,12 +10,17 @@ body, html{
 }
 
 header{
+    border: 2px solid;
     display: flex;
     justify-content: space-between;
     align-items: center;
     min-height: 6vh;
     background-color: white;
     z-index: 2;
+}
+
+nav{
+    border: 2px solid;
 }
 
 header > *{
@@ -128,5 +133,9 @@ header ul{
 
     .rotate .line2{
         visibility: hidden;
+    }
+
+    .nav-top{
+        z-index: 0;
     }
 }

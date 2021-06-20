@@ -16,11 +16,11 @@ function showNav(evt)
     // Z-index problems mitigated here
     if(nav.className.includes("nav-active"))
     {
-        nav.style.zIndex = "0";
+        nav.classList.add("nav-top");
     }
 
     else{
-        nav.style.zIndex = "-1";
+        nav.classList.remove("nav-top");
 
     }
 }
