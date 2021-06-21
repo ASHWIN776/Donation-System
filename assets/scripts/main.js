@@ -33,3 +33,30 @@ function styleNav()
 {
     header.classList.toggle("nav-scroll", this.scrollY > 0);
 }
+
+// Animation Counter
+const counters = document.querySelectorAll(".num-counter");
+
+counters.forEach(counter => {
+    const target = +counter.dataset.target;
+    const step = 100;
+    const inc = target / step;
+    let i = 0;
+    
+    function updateCounter()
+    {
+        console.log(++i);
+        if(i > 40,00,000) return;
+        let curr = +counter.innerText;
+        console.log(curr, target);
+        if(curr < target)
+        {
+            counter.innerText = curr + inc;
+            setTimeout(updateCounter, 1);
+        }
+        else 
+            counter.innerText = target;
+    }
+
+    updateCounter();
+});
