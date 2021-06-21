@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donation System</title>
+     <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- Iconify -->
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
     <!-- google fonts -->
@@ -14,11 +16,11 @@
     <link rel="stylesheet" href="./assets/styles/styles.css" />
     <!-- Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+    
   </head>
   <body>
     <header>
-        <div class="nav-logo">Logo</div>
+        <div class="nav-logo">yogdaan</div>
         <nav>
             <ul>
                 <li class="nav-item">
@@ -35,7 +37,7 @@
                 </li>
             </ul>
             <div class="nav-item">
-                <button id="donate-nav" class="donate">Donate</button>
+                <button id="donate-nav" class="donate" data-bs-toggle="modal" data-bs-target="#donateModal">Donate</button>
             </div>
         </nav>
         <div class="burger">
@@ -57,7 +59,7 @@
                     affecting communities everywhere. Let's fight it by helping each
                     other.
                 </p>
-                <button id="donate-btn" class="donate">
+                <button id="donate-btn" class="donate" data-bs-toggle="modal" data-bs-target="#donateModal">
                   Donate
                 </button>
             </div>
@@ -74,7 +76,7 @@
           <div>
             <div class="expend-container">
                 <span class="iconify" data-inline="false" data-icon="wpf:doctors-bag" style="color: #3b9feb; font-size: 26px;"></span>
-                <h4>For Medical Workers</h4>
+                <h5>For Medical Workers</h5>
                 <p class="expend-content">
                     Donations will be used to buy personal safety equipments for the
                     medical personnels
@@ -82,7 +84,7 @@
             </div>
             <div class="expend-container">
                 <span class="iconify" data-inline="false" data-icon="fluent:people-community-24-filled" style="font-size: 26px; color: #3B9FEB;"></span>
-                <h4>For Citizens</h4>
+                <h5>For Citizens</h5>
                 <p class="expend-content">
                     Donations will be used to buy personal safety equipments for the
                     medical personnels
@@ -90,7 +92,7 @@
             </div>
             <div class="expend-container">
                 <span class="iconify" data-inline="false" data-icon="fa-solid:business-time" style="font-size: 26px; color: #3B9FEB;"></span>
-                <h4>For Affected Businesses</h4>
+                <h5>For Affected Businesses</h5>
                 <p class="expend-content">
                     Donations will be used to buy personal safety equipments for the
                     medical personnels
@@ -127,6 +129,33 @@
         </div>
       </section>
     </main>
+    <!-- All Modals here -->
+    <!--Donate Modal -->
+    <div class="modal fade" id="donateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Donation Form</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="./assets/partials/_makePayment.php" method="POST" id="donateForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name of Donor</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount" class="form-label">Amount</label>
+                        <input type="text" class="form-control" id="amount" name="amount">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+            <button type="submit" form="donateForm" class="btn btn-success" id="donateButton">Donate</button>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <!-- External JS -->
     <script src="./assets/scripts/main.js"></script>
@@ -146,15 +175,17 @@
             }
         };
         var rzp1 = new Razorpay(options);
-        const donateBtns = document.querySelectorAll(".donate");
+        const donateBtn = document.querySelector("#donateButton");
 
-        donateBtns.forEach(btn => btn.addEventListener("click", startCheckout));
-        
+        donateBtn.addEventListener("click", startCheckout);
+
         function startCheckout(e)
         {
             rzp1.open();
             e.preventDefault();
         }
     </script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   </body>
 </html>

@@ -53,7 +53,7 @@ nav ul{
 
 .nav-item{
     list-style-type: none;
-    margin: 0.5rem 1rem;
+    margin: 0.2rem 0;
 }
 
 
@@ -69,7 +69,6 @@ nav ul{
 
 #donate-nav{
     background-color: transparent;
-    padding: 0.3rem 0.7rem;
     border: 3px solid #3B9FEB;
     text-transform: uppercase;
     border-radius: 5px;
@@ -94,7 +93,7 @@ nav ul{
 }
 
 .burger:hover .line{
-    background-color: rgb(103, 103, 103);
+    background-color: rgb(125, 93, 93);
     border-color:rgb(103,103,103);
 }
 
@@ -194,6 +193,14 @@ h2{
     flex-basis: 300px;
     border: 1px solid #D8D8D8;
     border-radius: 10px;
+}
+
+#expend-container{
+    display: inline-block;
+}
+
+h5{
+    margin-top: 0.5rem;
 }
 
 .expend-content{
@@ -362,6 +369,10 @@ h2{
     #home-content,
     #home-pic{
         flex-basis: 50%;
+    }
+
+    #home-content{
+        padding-top: 1rem;
     }
 
     #home-pic{
