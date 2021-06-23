@@ -20,11 +20,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($arr["payment_id"]))
     mysqli_query($conn, $sql);
 
     session_start();
-    $SESSION["payment_id"] = $payment_id;
-    $SESSION["checkout_started"] = true;
+    $_SESSION["payment_id"] = $payment_id;
+    $_SESSION["checkout_started"] = true;
 }
 
-
+// session_start();
+var_dump($_SESSION);
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION["payment_id"]) && $_SESSION["checkout_started"])
 {
     $payment_id = $_SESSION["payment_id"];
@@ -33,6 +34,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_SESSION["payment_id"]) && $_S
 
     session_unset();
     session_destroy();
+}
+
+else{
+    echo "Nope";
 }
 
 ?>
