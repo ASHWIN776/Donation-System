@@ -70,32 +70,38 @@ function startCheckout(e)
     let phone = this.elements.phone.value;
     let email = this.elements.email.value;
 
-    var options = {
-        "key": "rzp_test_d1YgWNuy1yyx2Y", // Enter the Key ID generated from the Dashboard
-        "amount": "50000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-        "currency": "INR",
-        "name": "Acme Corp",
-        "description": "Test Transaction",
-        "image": "https://example.com/your_logo",
-        // "order_id": "order_Ef80WJDPBmAeNt", //Pass the `id` obtained in the previous step
-        // "account_id": "acc_Ef7ArAsdU5t0XL",
-        "handler": function (response){
-            axios.post('http://localhost:8000/assets/partials/_handlePayment.php',{
-                amt: amt,
-                name: name,
-                phone: phone,
-                email: email,
-                payment_id: response.razorpay_payment_id
-            })
-            .then(success => {
-                console.log(success, "was successfull");
-                axios.get('index.php');
-            })
-            .catch(error => console.log("Error: ", error));
-        }
-    };
-    var rzp1 = new Razorpay(options);
+    axios.post('http://localhost:8000/assets/partials/_handlePayment.php',{
+        amt: amt,
+        name: name,
+        phone: phone,
+        email: email,
+    })
+    .then(success => {
+        console.log(success, "was successfull");
+        var options = {
+            "key": "rzp_test_d1YgWNuy1yyx2Y",
+            "amount": `${amt*100}`,
+            "currency": "INR",
+            "name": "Yogdaan Foundation",
+            "description": "Test Transaction",
+            "image": "https://example.com/your_logo",
+            "handler": function (response){
+                axios.post('http://localhost:8000/assets/partials/_handlePayment.php',{
+                    payment_id: response.razorpay_payment_id
+                })
+                .then(success => {
+                    console.log(success, "was successfull");
+                    axios.get('index.php');
+                })
+                .catch(error => console.log("Error: ", error));
+            }
+        };
+
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+    })
+    .catch(error => console.log("Error: ", error));
     
-    rzp1.open();
     e.preventDefault();
+    
 }
