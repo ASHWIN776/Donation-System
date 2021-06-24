@@ -35,6 +35,8 @@ if(isset($arr["payment_id"]) && isset($_SESSION["oid"]))
 
     session_unset();
     session_destroy();
+
+    header("location: index.php");
 }
 
 else{

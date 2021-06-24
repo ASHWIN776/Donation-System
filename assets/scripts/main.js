@@ -69,6 +69,7 @@ function startCheckout(e)
     let amt = this.elements.amount.value;
     let phone = this.elements.phone.value;
     let email = this.elements.email.value;
+    let p_success = false;
 
     axios.post('http://localhost:8000/assets/partials/_handlePayment.php',{
         amt: amt,
@@ -91,9 +92,14 @@ function startCheckout(e)
                 })
                 .then(success => {
                     console.log(success, "was successfull");
-                    axios.get('index.php');
+                    p_success = true;
                 })
                 .catch(error => console.log("Error: ", error));
+            },
+            "prefill":{
+                "name": name,
+                "email": email,
+                "contact": phone
             }
         };
 
@@ -101,7 +107,7 @@ function startCheckout(e)
         rzp1.open();
     })
     .catch(error => console.log("Error: ", error));
-    
+
     e.preventDefault();
     
 }

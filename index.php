@@ -19,6 +19,13 @@
     
   </head>
   <body>
+  <?php
+  
+    if(isset($_GET["email"]))
+    {
+        
+    }
+  ?>
     <header>
         <div class="nav-logo">yogdaan</div>
         <nav>
