@@ -8,7 +8,8 @@ $arr = get_object_vars($obj);
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($arr["name"]))
-{
+{   
+    
     $name = $arr["name"];
     $amount = $arr["amt"];
     $email = $arr["email"];
@@ -20,12 +21,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($arr["name"]))
     
     mysqli_query($conn, $sql);
 
-    session_start();
     $_SESSION["oid"] = mysqli_insert_id($conn);
-    var_dump($_SESSION);
 }
 
-var_dump($_SESSION);
 if(isset($arr["payment_id"]) && isset($_SESSION["oid"]))
 {
     $payment_id = $arr["payment_id"];

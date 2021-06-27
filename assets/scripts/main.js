@@ -60,8 +60,9 @@ counters.forEach(counter => {
 
 // Donate to Razorpay
 const donateForm = document.querySelector("#donateForm");
-donateForm.addEventListener("submit", startCheckout);
+const donateBtn = document.querySelector("#donateButton");
 
+donateForm.addEventListener("submit", startCheckout);
 function startCheckout(e)
 {
     console.dir(this);
@@ -69,7 +70,10 @@ function startCheckout(e)
     let amt = this.elements.amount.value;
     let phone = this.elements.phone.value;
     let email = this.elements.email.value;
-    let p_success = false;
+    // let name = document.querySelector("#name").value;
+    // let amt = document.querySelector("#amount").value;
+    // let phone = document.querySelector("#phone").value;
+    // let email = document.querySelector("#email").value;
 
     axios.post('http://localhost:8000/assets/partials/_handlePayment.php',{
         amt: amt,
@@ -86,13 +90,13 @@ function startCheckout(e)
             "name": "Yogdaan Foundation",
             "description": "Test Transaction",
             "image": "https://example.com/your_logo",
+            "callback_url": "https://localhost:8000/index.php",
             "handler": function (response){
                 axios.post('http://localhost:8000/assets/partials/_handlePayment.php',{
                     payment_id: response.razorpay_payment_id
                 })
                 .then(success => {
                     console.log(success, "was successfull");
-                    p_success = true;
                 })
                 .catch(error => console.log("Error: ", error));
             },
