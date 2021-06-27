@@ -1,11 +1,23 @@
 <?php
+$servername = "localhost";
+$username = "root"; // id17135952_root
+$password = ""; // mP{e~rVb}[@eA9jL
+$database = "yogdaan"; // id17135952_yogdaan
+
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+if(!$conn)
+    die("Connection Failed :(");
+ 
 $conn = mysqli_connect("localhost", "root", "", "yogdaan");
+
+// To get the values sent by axios
 $json = file_get_contents('php://input');
 $obj = json_decode($json);
 
-var_dump($obj);
 $arr = get_object_vars($obj);
 session_start();
+var_dump($obj);
 
 if($_SERVER["REQUEST_METHOD"] == "POST" && isset($arr["name"]))
 {   
@@ -33,11 +45,9 @@ if(isset($arr["payment_id"]) && isset($_SESSION["oid"]))
 
     session_unset();
     session_destroy();
-
 }
 
 else{
     echo "Nope";
 }
-
 ?>
