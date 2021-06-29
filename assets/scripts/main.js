@@ -14,7 +14,7 @@ function showNav(evt)
     nav.classList.toggle("nav-active");
     main.classList.toggle("shift-main");
 
-    // Z-index problems mitigated here
+    // z-index problems mitigated here
     if(nav.className.includes("nav-active"))
     {
         nav.classList.add("nav-top");
@@ -22,10 +22,8 @@ function showNav(evt)
 
     else{
         nav.classList.remove("nav-top");
-
     }
 }
-
 
 window.addEventListener("scroll", styleNav);
 
@@ -53,10 +51,8 @@ counters.forEach(counter => {
         else 
             counter.innerText = target;
     }
-
     updateCounter();
 });
-
 
 // Donate to Razorpay
 const donateForm = document.querySelector("#donateForm");

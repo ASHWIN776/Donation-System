@@ -34,14 +34,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($arr["name"]))
     mysqli_query($conn, $sql);
 
     $_SESSION["oid"] = mysqli_insert_id($conn);
+    $_SESSION["arr"] = $arr;
 }
 
 if(isset($arr["payment_id"]) && isset($_SESSION["oid"]))
 {
     $payment_id = $arr["payment_id"];
+    $sessionArr = $_SESSION["arr"];
     $id = $_SESSION["oid"];
     $sql = "UPDATE payment SET payment_status='successfull', payment_id='$payment_id' WHERE id='$id'";
     mysqli_query($conn,$sql);
+
+    require '_mail.php';
 
     session_unset();
     session_destroy();
