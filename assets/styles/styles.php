@@ -111,6 +111,10 @@ nav ul{
 
 /* Header Styles ends here */
 
+main{
+    /* border: 2px solid red; */
+}
+
 #home{
     display: flex;
     height: 100vh;
@@ -215,7 +219,7 @@ h5{
     background-color: #F3F3F3;
     display: flex;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
 }
 
 #org-stats > div{
@@ -253,6 +257,17 @@ h5{
 .num-content{
     margin: 0.4rem 0;
     text-transform: uppercase;
+}
+
+footer{
+    padding: 1rem 0;
+    text-align: center;
+    font-weight: bold;
+    margin-top: -1rem;
+}
+
+footer p{
+    margin: 0;
 }
 
 
